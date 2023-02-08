@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram</title>
+    <link rel = "icon" href =
+            "Instagram_logo_2016.svg.webp"
+          type = "image/x-icon">
+
+
+    <style>
+        #m-page{
+            position: relative;
+            height: 590px;
+            left: 350px;
+            top: 35px;
+        }
+
+        #main{
+            height: 560px;
+        }
+
+
+        #login{
+            position: relative;
+            left: 800px;
+            bottom: 550px;
+            border: 1px solid #dbdbdb;
+            border-radius: 2px;
+            text-align: center;
+            max-width: 350px;
+        }
+
+        #logo{
+            padding-top: 30px;
+        }
+
+        .inputData{
+            text-align: left;
+            width: 270px;
+            margin-top: 20px;
+            border: 1px solid #dbdbdb;
+            color: #8e8e8e;
+            padding: 10px;
+            border-radius: 2px;
+        }
+
+        input:focus {
+            outline: none;
+            border: 1px solid #a8a8a8;
+            color: black;
+        }
+
+        #checkboxDiv{
+            text-align: left;
+            padding-left: 30px;
+            margin-top: 12px;
+            font-size: 14px;
+            font-family: Proxima Nova;
+            color: #262626;
+        }
+
+        #checkboxDiv input{
+            position: relative;
+            top: 2px;
+        }
+
+        #enter{
+            margin-top: 12px;
+            width: 290px;
+            background-color: #7cbcfc;
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 7px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #enter:hover{
+            background-color: #3995f7;
+
+        }
+
+        #line1{
+            position: absolute;
+            border-bottom: 1px solid gray;
+            width: 120px;
+            top: 275px;
+            left: 25px
+        }
+
+        #line2{
+            position: absolute;
+            border-bottom: 1px solid gray;
+            width: 120px;
+            right: 25px;
+            top: 275px
+        }
+
+        #lines{
+            font-size: 15px;
+            padding-top: 15px;
+            color: #8e8e8e;
+        }
+
+        #facebook{
+            position: absolute;
+            padding-top: 30px;
+            left: 90px;
+            bottom: 65px
+        }
+
+        #logFacebook{
+            color: #4055a0;
+            font-size: 14px;
+            border: none;
+            background: none;
+            margin-top: 30px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            text-align: center;
+            margin-left: 25px;
+            cursor: pointer;
+        }
+
+        #forgetPassword{
+            margin-bottom: 30px;
+            margin-top: 10px;
+            right: 15px;
+        }
+
+        #forgetPassword a, #downMenu a{
+            font-size: 14px;
+            color: #11376c;
+            text-decoration: none;
+        }
+
+        #downMenu{
+            position: relative;
+            bottom: 540px;
+            border: 1px solid #dbdbdb;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            border-radius: 2px;
+            text-align: center;
+            max-width: 350px;
+            left: 800px;
+
+        }
+
+        #install{
+            position: relative;
+            bottom: 40px;
+            left: 800px;
+            width: 350px;
+            text-align: center;
+            line-height: 1cm;
+        }
+
+        #additional{
+            color: #8e8e8e;
+            text-align: center;
+            font-size: 14px;
+            line-height: 0.7cm;
+            text-space: 1cm;
+        }
+
+        .addInfo{
+            padding-left: 15px;
+            text-decoration: none;
+            color: #8e8e8e;
+        }
+
+        #languages{
+            outline: none;
+            border: none;
+            cursor: pointer;
+            color: #8e8e8e;
+            margin-right: 10px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+    <img src="main%20page.png" alt="main page" id="m-page">
+    <div id="login">
+        <img src="logo.png" alt="insta" width="150px" id="logo">
+        <input type="text" placeholder="Телефон, имя пользователя или эл. адрес" class="inputData">
+        <input type="password" placeholder="Пароль" class="inputData" style="margin-top: 5px"> <br>
+        <div id="checkboxDiv"> <input type="checkbox" id="checkbox"> Сохранить данные входа </div>
+        <button id="enter"> Войти </button> <br>
+        <div id="lines">
+            <div id="line1"></div> ИЛИ <div id="line2"></div>
+        </div>
+        <img src="parent%20logo.png" alt="parent_company" width="16px" id="facebook"> <button id="logFacebook">  Войти через Facebook </button> <br>
+        <div  id="forgetPassword"><a href="index.html">Забыли пароль?</a> </div>
+    </div>
+        <div id="downMenu" style="font-size:15px">
+            У вас ещё нет аккаунта?<a href="index.html" style="color: #3995f7; font-size:15px">  Зарегистрироваться  </a>
+        </div>
+    </div>
+    <p id="install">
+        Установите приложение. <br>
+        <a href="index.html" style="text-decoration: none"> <img src="https://static.cdninstagram.com/rsrc.php/v3/yr/r/fDjwyLC88oO.png" alt="google" height="40px"> </a>
+        <a href="index.html" style="text-decoration: none"> <img src="https://static.cdninstagram.com/rsrc.php/v3/yv/r/_UbeIRgTpG-.png" alt="microsoft" height="40px"></a>
+    </p>
+    <p id="additional">
+        <a href="index.html" class="addInfo">Meta</a> <a href="index.html" class="addInfo">Информация</a> <a href="index.html" class="addInfo">Блог</a> <a href="index.html" class="addInfo">Вакансии</a> <a href="index.html" class="addInfo">Помощь</a> <a href="index.html" class="addInfo">API</a> <a href="index.html" class="addInfo">Конфиденциальность</a> <a href="index.html" class="addInfo">Условия</a> <a href="index.html" class="addInfo">Популярные аккаунты</a> <a href="index.html" class="addInfo"> Места </a> <a href="index.html" class="addInfo">Instagram Lite</a> <a href="index.html" class="addInfo">Загрузка контактов и лица, не являющиеся пользователями</a> <br>
+        <select id="languages" >
+            <option>Русский</option>
+            <option>Қазақша</option>
+            <option>English</option>
+        </select>
+        © 2023 Instagram from Meta
+    </p>
+</body>
+</html>
