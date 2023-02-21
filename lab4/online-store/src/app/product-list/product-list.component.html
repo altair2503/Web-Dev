@@ -2,16 +2,15 @@
 
 <div *ngFor = "let product of products">
   <h3> 
-    <a
-            [title] = "product.name + ' details' "
-            [routerLink]="['/products', product.id]"
-    >
+    <a href="{{product.link}}">
     {{product.name}}
     </a>
   </h3>
 
-  <p *ngIf="product.description">
-    Description: {{product.description}}
+  <img src="{{product.image}}" alt="product image" height="150px">
+
+  <p *ngIf="product.description" id="descr">
+    {{product.description}}
   </p>
 
   <button type="button" (click)="share()">
