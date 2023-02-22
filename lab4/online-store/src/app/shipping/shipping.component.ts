@@ -13,7 +13,4 @@ export class ShippingComponent {
 
   shippingCost!: Observable<{ type: string; price: number }[]>;
 
-  ngOnInit(): void{
-      this.shippingCost = this.cartService.getShippingPrice();
-  }
 }

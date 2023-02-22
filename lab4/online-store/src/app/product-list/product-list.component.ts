@@ -1,22 +1,31 @@
 import { Component } from '@angular/core';
-
-import { products } from '../products';
+import {Product, products} from '../products';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
   products = products;
 
-  share() {
-    window.alert('The product has been shared!');
+  share(product: { link: string; }) {
+    window.open("https://telegram.me/share/url?url=" + product.link + ">&text=<{{product.name}}>")
   }
 
-  onNotify(){
-    window.alert("You will be notified when the product goes on sale")
+  stars(num: number, check: boolean): string  {
+      var text = "";
+      for (let i = 0; i < num; i++) {
+          if(check){
+              text += '⭐️';
+          } else{
+              text += '☆'
+          }
+
+      }
+      return text;
   }
+
 }
 
 
