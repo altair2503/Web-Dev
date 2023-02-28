@@ -16,8 +16,8 @@
         Rating: {{stars(product.rating, true)}}<div style="position:relative;font-size: 25px;outline: none; margin: 0; bottom: 6px">{{stars(5-product.rating, false)}}</div>
     </div>
 
-    <div>
-        Likes: {{product.likes}} <button [ngStyle]="{background: 'red'}">❤</button>
+    <div style="margin: 5px 0 5px 0">
+        <label style="display: inline-flex; margin-right: 15px"> Likes: {{product.likes}} </label>  <button style="font-size: 16px" [ngStyle]="{'background-color' : isPressed ? 'red' : '#e3e3e3', 'color' : isPressed ? 'white' : 'red'}" (click)="pressLike()">❤</button>
     </div>
 
     <div style="display: inline-flex; margin-top: 20px">

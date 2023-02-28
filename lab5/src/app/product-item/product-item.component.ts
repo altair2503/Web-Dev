@@ -10,6 +10,7 @@ export class ProductItemComponent {
   @Input() product: Product | undefined;
   @Output() removeID = new EventEmitter();
 
+  isPressed: boolean = false
 
 
   stars(num: number, check: boolean): string  {
@@ -31,6 +32,15 @@ export class ProductItemComponent {
 
   delete(productID: number){
       this.removeID.emit(productID)
+  }
+
+  pressLike(){
+    if (this.product !== undefined){
+      (!this.isPressed ? this.product.likes++ : this.product.likes--)
+      this.isPressed = !this.isPressed
+    }
+
+
   }
 
 }
