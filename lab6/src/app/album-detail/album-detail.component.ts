@@ -33,6 +33,7 @@ export class AlbumDetailComponent implements OnInit{
   }
 
   updateAlbum(id: number): void{
+    this.updatedAlbum.userId = this.album.userId
     this.albumService.updateAlbum(id, this.updatedAlbum).subscribe((album) => {
       this.album = album;
       this.updatedAlbum.title = "";

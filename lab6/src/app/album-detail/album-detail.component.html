@@ -4,11 +4,13 @@
   <label>ID: </label> {{album.id}} <br>
   <label>UserID: </label> {{album.userId}} <br>
   <label>Title: </label> {{album.title}} <br>
+  <fieldset>
+    <input type="text" [(ngModel)]="updatedAlbum.title" placeholder="Title">
+    <button (click)="updateAlbum(album.id)" ngmo>Update</button>
+  </fieldset>
+  <a routerLink="/albums/{{album.id}}/photos">Photo</a>
 </div>
 
-<fieldset>
-  <input type="text" [(ngModel)]="updatedAlbum.title" placeholder="Title">
-  <button (click)="updateAlbum(album.id)" ngmo>Update</button>
-</fieldset>
+
 
 <h3 *ngIf="!loaded"> Album is loading </h3>
