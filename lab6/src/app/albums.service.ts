@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Album, Photos} from "./models";
+import {Location} from "@angular/common";
 
 @Injectable({
   providedIn: 'root'
@@ -37,4 +38,5 @@ export class AlbumsService {
   getPhotos(id:number): Observable<Photos[]>{
     return this.client.get<Photos[]>(`${this.BASE_URL}/albums/${id}/photos`)
   }
+
 }

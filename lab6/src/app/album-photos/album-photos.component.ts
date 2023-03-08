@@ -25,4 +25,8 @@ export class AlbumPhotosComponent implements OnInit{
       this.loaded = true
     }))
   }
+
+  returnBack(): void{
+    this.location.back()
+  }
 }

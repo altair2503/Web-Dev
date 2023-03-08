@@ -28,10 +28,6 @@ export class AlbumDetailComponent implements OnInit{
     }))
   }
 
-  returnBack(): void{
-    this.location.back()
-  }
-
   updateAlbum(id: number): void{
     this.updatedAlbum.userId = this.album.userId
     this.albumService.updateAlbum(id, this.updatedAlbum).subscribe((album) => {
@@ -39,4 +35,10 @@ export class AlbumDetailComponent implements OnInit{
       this.updatedAlbum.title = "";
     })
   }
+
+  returnBack(): void{
+    this.location.back()
+  }
+
+
 }
