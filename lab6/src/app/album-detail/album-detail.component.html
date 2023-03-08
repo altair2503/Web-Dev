@@ -1,6 +1,8 @@
 <div id="detail">
   <button (click)="returnBack()" id="back">Return back</button>
 
+  <h3 *ngIf="!loaded"> Album detail is loading </h3>
+
   <div *ngIf="loaded" style="justify-content: left;">
     <div id="info" style="justify-content: left; padding: 10px;  border-radius: 7px">
       <strong>ID: </strong> {{album.id}} <br>
@@ -9,7 +11,7 @@
       <strong>Photo link: </strong><a routerLink="/albums/{{album.id}}/photos">Photos</a>
     </div>
 
-    <h3 *ngIf="!loaded"> Album detail is loading </h3>
+
 
     <fieldset style="width: 100px; border-radius: 5px">
       <p style="margin-bottom: 5px">Update title</p>
