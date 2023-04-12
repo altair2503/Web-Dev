@@ -42,7 +42,7 @@ def vacancy_detail(request, id):
         vacancy = Vacancy.objects.get(id=id)
         return JsonResponse(vacancy.to_json())
     except Vacancy.DoesNotExist as e:
-        return JsonResponse({"error": str(e)})
+        return JsonResponse({"error": str(e)}, status=http.client.BAD_REQUEST)
 
 
 def vacancy_topten(request):
