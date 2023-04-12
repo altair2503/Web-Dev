@@ -13,7 +13,7 @@ class Company(models.Model):
         verbose_name_plural = "Companies"
 
     def __str__(self):
-        return f'{self.id}: {self.name}, {self.city}'
+        return f'{self.name}, {self.city}'
 
     def to_json(self):
         return {
