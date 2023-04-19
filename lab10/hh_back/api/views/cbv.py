@@ -43,3 +43,11 @@ class VacancyDetailsAPIView(APIView):
         instance = self.get_object(id)
         instance.delete()
         return Response({"delete": True})
+
+
+class VacancyTopTenAPIView(APIView):
+    def get(self, request):
+        vacancies = Vacancy.objects.all().order_by("-salary")[:10]
+        serializer = VacancySerializer(vacancies, many=True)
+        return Response(serializer.data)
+

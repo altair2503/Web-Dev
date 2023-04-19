@@ -7,5 +7,5 @@ urlpatterns = [
     path('companies/<int:id>/vacancies/', views.company_vacancies),
     path('vacancies/', views.VacancyListAPIView.as_view()),
     path('vacancies/<int:id>/', views.VacancyDetailsAPIView.as_view()),
-    # path('vacancies/top_ten/', views.vacancy_topten),
+    path('vacancies/top_ten/', views.VacancyTopTenAPIView.as_view()),
 ]

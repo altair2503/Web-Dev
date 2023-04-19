@@ -67,8 +67,3 @@ def vacancy_detail(request, id):
         return JsonResponse({"error": str(e)}, status=http.client.BAD_REQUEST)
 
 
-def vacancy_topten(request):
-    vacancy = Vacancy.objects.all().order_by("-salary")[:10]
-    vacancy = [v.to_json() for v in vacancy]
-    print(vacancy)
-    return JsonResponse(vacancy, safe=False)
