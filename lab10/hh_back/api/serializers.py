@@ -21,8 +21,11 @@ class CompanySerializer(serializers.Serializer):
         return instance
 
 
-class VacancySerializer(serializers.ModelSerializer):
 
+
+class VacancySerializer(serializers.ModelSerializer):
+    company = CompanySerializer()
     class Meta:
         model = Vacancy
         fields = ('id', 'name', 'description', 'salary', 'company')
+
