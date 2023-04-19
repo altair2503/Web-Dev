@@ -7,7 +7,7 @@ export interface Company{
 }
 
 
-export interface Company{
+export interface Vacancy{
   id: number;
   name: string;
   description: string;

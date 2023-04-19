@@ -4,7 +4,7 @@ from django.http.response import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from api.serializers import CompanySerializer
+from api.serializers import CompanySerializer, VacancySerializer
 
 
 @api_view(['GET', 'POST'])
@@ -42,28 +42,28 @@ def company_detail(request, id):
         company.delete()
         return Response({'deleted': True})
 
-
+@api_view(['GET'])
 def company_vacancies(request, id):
     try:
-        company = Company.objects.get(pk=id)
-        vacancies = company.vacancy_set.all()
-        vacancies = [v.to_json() for v in vacancies]
-        return JsonResponse({f"{company.name}'s vacancies": vacancies}, safe=False)
+        company = Company.objects.get(id=id)
     except Company.DoesNotExist as e:
         return JsonResponse({"error": str(e)}, status=http.client.BAD_REQUEST)
 
+    if request.method == 'GET':
+        vacancies = company.vacancy_set.all()
+        serializer = VacancySerializer(vacancies, many=True)
+        return Response(serializer.data)
 
-def vacancy_list(request):
-    vacancies = Vacancy.objects.all()
-    vacancies = [v.to_json() for v in vacancies]
-    return JsonResponse(vacancies, safe=False)
+
+    #
+    # try:
+    #     company = Company.objects.get(pk=id)
+    #     vacancies = company.vacancy_set.all()
+    #     vacancies = [v.to_json() for v in vacancies]
+    #     return JsonResponse({f"{company.name}'s vacancies": vacancies}, safe=False)
+    # except Company.DoesNotExist as e:
+    #     return JsonResponse({"error": str(e)}, status=http.client.BAD_REQUEST)
 
 
-def vacancy_detail(request, id):
-    try:
-        vacancy = Vacancy.objects.get(id=id)
-        return JsonResponse(vacancy.to_json())
-    except Vacancy.DoesNotExist as e:
-        return JsonResponse({"error": str(e)}, status=http.client.BAD_REQUEST)
 
 

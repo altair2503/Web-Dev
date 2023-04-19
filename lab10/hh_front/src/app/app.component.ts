@@ -29,9 +29,12 @@ export class AppComponent implements OnInit{
 
 
   addCompany(){
-    console.log(this.newCompany)
-    this.newCompany = {} as Company
+    this.companyService.createCompany(this.newCompany).subscribe( (company) => {
+      this.companies.push(company)
+      this.newCompany = {} as Company
+    })
   }
+
 
 
 
