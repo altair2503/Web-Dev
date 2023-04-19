@@ -1,0 +1,12 @@
+fieldset{
+  width: max-content;
+  padding: 20px;
+}
+
+fieldset *{
+  margin: 5px;
+}
+
+fieldset input{
+  width: fit-content;
+}

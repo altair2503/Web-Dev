@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {CompanyService} from "../company.service";
-import {Vacancy} from "../models";
+import {Company, Vacancy} from "../models";
 
 @Component({
   selector: 'app-vacancies',
@@ -9,15 +9,24 @@ import {Vacancy} from "../models";
   styleUrls: ['./vacancies.component.css']
 })
 export class VacanciesComponent implements OnInit{
-
+  companyID: number = -1
+  newVacancy = {} as Vacancy
+  company = {} as Company
   vacancies: Vacancy[] = []
   constructor(private route: ActivatedRoute, private companyService: CompanyService) {
   }
 
   ngOnInit() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.companyID = Number(this.route.snapshot.paramMap.get('id'));
     console.log("hello")
-    this.getVacancies(id)
+    this.getVacancies(this.companyID)
+    this.getCompany(this.companyID)
+  }
+
+  getCompany(id: number){
+    this.companyService.getCompany(id).subscribe( (company) => {
+      this.company = company
+    })
   }
 
   getVacancies(id: number){
@@ -26,5 +35,14 @@ export class VacanciesComponent implements OnInit{
       this.vacancies = vacancies;
       console.log(vacancies)
     }))
+  }
+
+  addVacancy(){
+    // @ts-ignore
+    this.newVacancy.company = this.companyID
+    this.companyService.createVacancies(this.newVacancy).subscribe( (vacancy)=> {
+      this.vacancies.push(vacancy)
+      this.newVacancy = {} as Vacancy
+    })
   }
 }

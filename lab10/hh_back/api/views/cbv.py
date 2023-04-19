@@ -1,8 +1,8 @@
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from api.models import Vacancy
-from api.serializers import VacancySerializer
+from api.models import Vacancy, Company
+from api.serializers import VacancySerializer, CompanySerializer
 
 
 class VacancyListAPIView(APIView):
@@ -16,7 +16,7 @@ class VacancyListAPIView(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class VacancyDetailsAPIView(APIView):

@@ -1,5 +1,18 @@
+<h2>{{this.company.name}}</h2>
+
+<fieldset>
+  <label>Vacancy name</label>
+  <input type="text" [(ngModel)]="newVacancy.name"> <br>
+  <label>Description</label>
+  <input type="text" [(ngModel)]="newVacancy.description"> <br>
+  <label>Salary</label>
+  <input type="text" [(ngModel)]="newVacancy.salary"> <br>
+  <button (click)="addVacancy()">Add Vacancy</button>
+</fieldset>
+
+
 <ul>
   <li *ngFor="let vacancy of vacancies">
-    {{vacancy.id}} - {{vacancy.name}}, {{vacancy.description}}, {{vacancy.salary}}, {{vacancy.company.name}}
+    {{vacancy.id}} - {{vacancy.name}}, {{vacancy.description}}, {{vacancy.salary}}
   </li>
 </ul>
