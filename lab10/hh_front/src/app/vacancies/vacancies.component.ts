@@ -11,7 +11,7 @@ import {Vacancy} from "../models";
 export class VacanciesComponent implements OnInit{
 
   vacancies: Vacancy[] = []
-  constructor(private route: ActivatedRoute, private companyService: CompanyService, private location: Location) {
+  constructor(private route: ActivatedRoute, private companyService: CompanyService) {
   }
 
   ngOnInit() {
@@ -21,6 +21,7 @@ export class VacanciesComponent implements OnInit{
   }
 
   getVacancies(id: number){
+    console.log(id)
     this.companyService.getVacancies(id).subscribe(( (vacancies) => {
       this.vacancies = vacancies;
       console.log(vacancies)

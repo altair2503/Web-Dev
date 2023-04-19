@@ -31,7 +31,7 @@ export class CompanyService {
 
   getVacancies(id: number): Observable<Vacancy[]>{
     return this.client.get<Vacancy[]>(
-      `${this.BASE_URL}/api/companies/${id}/vacancies`
+      `${this.BASE_URL}/api/companies/${id}/vacancies/`
     )
   }
 }
