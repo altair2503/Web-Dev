@@ -14,5 +14,6 @@
 <ul>
   <li *ngFor="let vacancy of vacancies">
     {{vacancy.id}} - {{vacancy.name}}, {{vacancy.description}}, {{vacancy.salary}}
+    <button (click)="deleteVacancy(vacancy.id)" style="margin-left: 10px">X</button>
   </li>
 </ul>

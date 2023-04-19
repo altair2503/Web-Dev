@@ -32,4 +32,10 @@ export class CompaniesComponent implements OnInit{
       this.newCompany = {} as Company
     })
   }
+
+  deleteCompany(id: number){
+    this.companyService.deleteCompany(id).subscribe( (data) => {
+      this.companies = this.companies.filter((company) => company.id !== id)
+    })
+  }
 }

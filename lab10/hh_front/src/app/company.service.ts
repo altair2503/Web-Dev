@@ -47,4 +47,10 @@ export class CompanyService {
       vacancy
     )
   }
+
+  deleteVacancy(id: number): Observable<any>{
+    return this.client.delete<any>(
+      `${this.BASE_URL}/api/vacancies/${id}/`
+    )
+  }
 }

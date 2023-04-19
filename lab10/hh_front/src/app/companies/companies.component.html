@@ -26,6 +26,6 @@
 <ul>
   <li *ngFor="let company of companies">
     <a routerLink="/companies/{{company.id}}/vacancies">    {{company.id}} - {{company.name}} ({{company.description}}, {{company.city}}, {{company.address}})</a>
-    <!--    <button (click)="deleteCategory(category.id)">X</button>-->
+        <button (click)="deleteCompany(company.id)" style="margin-left: 10px">X</button>
   </li>
 </ul>

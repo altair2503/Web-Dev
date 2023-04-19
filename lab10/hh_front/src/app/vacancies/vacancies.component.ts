@@ -45,4 +45,10 @@ export class VacanciesComponent implements OnInit{
       this.newVacancy = {} as Vacancy
     })
   }
+
+  deleteVacancy(id: number){
+    this.companyService.deleteVacancy(id).subscribe( (data)=> {
+      this.vacancies = this.vacancies.filter( (vacancy) => vacancy.id != id)
+    })
+  }
 }
